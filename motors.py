@@ -35,11 +35,11 @@ def loop_motor():
   gpio.output(motorA,gpio.HIGH)
   gpio.output(motorB,gpio.LOW)
   gpio.output(motorE,gpio.HIGH)
-  time.sleep(0.5)
+  time.sleep(2)
   gpio.output(motorA,gpio.LOW)
   gpio.output(motorB,gpio.HIGH)
   gpio.output(motorE,gpio.HIGH)
-  time.sleep(0.5)
+  time.sleep(2)
 
 def delay_us(tus): # use microseconds to improve time resolution
   endTime = time.time() + float(tus)/ float(1E6)
