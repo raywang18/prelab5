@@ -1,7 +1,7 @@
 import RPi.GPIO as gpio
 import time
 
-gpio.setMode(gpio.BCM)
+gpio.setmode(gpio.BCM)
 
 # motor 
 motorA = 16
