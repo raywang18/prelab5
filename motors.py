@@ -20,8 +20,8 @@ stepperPins = [5,6,13,19] # controller inputs: in1, in2, in3, in4
 for pin in stepperPins:
   gpio.setup(pin, gpio.OUT, initial=0)
 
-dcMin = 3
-dcMax = 12
+dcMin = 2
+dcMax = 15
 
 servopwm = gpio.PWM(servoPin, 50) 
 servopwm.start(0)
