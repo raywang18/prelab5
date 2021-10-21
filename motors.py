@@ -59,12 +59,12 @@ try:
     for dc in range(dcMin,dcMax):
       servopwm.ChangeDutyCycle(dc)
       print(dc)
-      time.sleep(0.05)
+      time.sleep(0.01)
     time.sleep(2)
     for dc in range(dcMin,dcMax):
       servopwm.ChangeDutyCycle(dc)
       print(dc)
-      time.sleep(0.05)
+      time.sleep(0.01)
 
     loop(cw)
     loop(ccw)
