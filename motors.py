@@ -51,7 +51,7 @@ def loop(dir): # dir = rotation direction (cw or ccw)
     for halfstep in range(8): # 8 half-steps per cycle
       for pin in range(4):    # 4 pins that need to be energized
         gpio.output(stepperPins[pin], dir[halfstep][pin])
-      delay_us(1000)
+      delay_us(10)
 
 
 try:
@@ -60,7 +60,7 @@ try:
       servopwm.ChangeDutyCycle(dc)
       print(dc)
       time.sleep(0.5)
-    for dc in range(dcMin, dcMax).reverse():
+    for dc in reversed(range(dcMin, dcMax)):
       servopwm.ChangeDutyCycle(dc)
       print(dc)
       time.sleep(0.5)
@@ -68,7 +68,7 @@ try:
     loop(cw)
     loop(ccw)
 
-    motor_loop()
+    loop_motor()
 except KeyboardInterrupt:
   print("closing")
 gpio.cleanup()
