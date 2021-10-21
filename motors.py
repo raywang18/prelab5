@@ -32,19 +32,14 @@ cw = ccw[:]
 cw.reverse()
 
 def loop_motor():
-	# Going forwards
-	gpio.output(motorA,gpio.HIGH)
+  gpio.output(motorA,gpio.HIGH)
   gpio.output(motorB,gpio.LOW)
   gpio.output(motorE,gpio.HIGH)
-	time.sleep(0.5)
-
- 	# Going backwards
+  time.sleep(0.5)
   gpio.output(motorA,gpio.LOW)
   gpio.output(motorB,gpio.HIGH)
   gpio.output(motorE,gpio.HIGH)
   time.sleep(0.5)
-
-  gpio.output(motorE,gpio.LOW)
 
 def delay_us(tus): # use microseconds to improve time resolution
   endTime = time.time() + float(tus)/ float(1E6)
@@ -69,7 +64,7 @@ try:
       servopwm.ChangeDutyCycle(dc)
       print(dc)
       time.sleep(0.5)
-      
+
     loop(cw)
     loop(ccw)
 
