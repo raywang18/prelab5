@@ -51,7 +51,7 @@ def loop(dir): # dir = rotation direction (cw or ccw)
     for halfstep in range(8): # 8 half-steps per cycle
       for pin in range(4):    # 4 pins that need to be energized
         gpio.output(stepperPins[pin], dir[halfstep][pin])
-      delay_us(10)
+      delay_us(1000)
 
 
 try:
@@ -59,11 +59,11 @@ try:
     for dc in range(dcMin,dcMax):
       servopwm.ChangeDutyCycle(dc)
       print(dc)
-      time.sleep(0.5)
+      time.sleep(0.01)
     for dc in reversed(range(dcMin, dcMax)):
       servopwm.ChangeDutyCycle(dc)
       print(dc)
-      time.sleep(0.5)
+      time.sleep(0.01)
 
     loop(cw)
     loop(ccw)
